@@ -3,23 +3,20 @@ import "./Home.css";
 import Square from "./Square";
 import { io } from "socket.io-client";
 import Swal from "sweetalert2";
+
 const renderFrom = [
   [1, 2, 3],
   [4, 5, 6],
   [7, 8, 9],
 ];
+
 const Home = () => {
   const [gameState, setGameState] = useState(renderFrom);
-
   const [currentPlayer, setCurrentPlayer] = useState("circle");
-
   const [finishedState, setFinishedState] = useState(false);
-
   const [finishedArrayState, setFinishedArrayState] = useState([]);
   const [playOnline, setPlayOnline] = useState(false);
-  false;
   const [socket, setSocket] = useState(null);
-
   const [playerName, setPlayerName] = useState("");
   const [opponentName, setOpponentName] = useState(null);
   const [playingAs, setPlayingAs] = useState(null);
@@ -43,7 +40,6 @@ const Home = () => {
         gameState[1][col] === gameState[2][col]
       ) {
         setFinishedArrayState([0 * 3 + col, 1 * 3 + col, 2 * 3 + col]);
-
         return gameState[0][col];
       }
     }
@@ -197,8 +193,8 @@ const Home = () => {
           finishedState !== "opponentLeftMatch" &&
           finishedState !== "draw" && (
             <h3 className="finished-state">
-              {finishedState === playingAs ? "You " : finishedState} won the
-              game
+              {finishedState === playingAs ? "You " : `${opponentName} `} won
+              the game
             </h3>
           )}
         {finishedState &&
