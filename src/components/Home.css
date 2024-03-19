@@ -38,7 +38,7 @@
   flex-direction: column;
 }
 
-/* .playOnline {
+.playOnline {
   font-weight: 700;
   border: none;
   background-color: #e4ca56;
@@ -48,7 +48,7 @@
   padding: 6px 10px;
   border-radius: 5px;
   outline: none;
-} */
+}
 
 .water-background {
   background-color: #4b495f;
