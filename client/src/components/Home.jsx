@@ -119,7 +119,7 @@ const Home = () => {
     const username = result.value;
     setPlayerName(username);
 
-    const newSocket = io("http://localhost:3000", {
+    const newSocket = io("https://multiplayertic-tac-toe.netlify.app/", {
       autoConnect: true,
     });
 
